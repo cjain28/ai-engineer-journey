@@ -14,13 +14,13 @@ def get_notes_from_user():
             print("NOTES ARE SAVED!\n")
             break
         all_notes.append(note)
-    return ".".join(all_notes)
+    return "\n".join(all_notes)
 
 def chunk_notes(notes):
-    return [chunk.strip() for chunk in notes.split('.') if chunk.strip()]
+    return [chunk.strip() for chunk in notes.split('\n') if chunk.strip()]
 
 def retrieve(chunks, question):
-    stop_words = ["what", "where", "who", "how", "when", "he", "him", "she", "her", "?", "!", "I", "am", "is", "are"]
+    stop_words = ["what", "where", "who", "how", "when", "he", "him", "she", "her", "?", "!", "I", "am", "is", "my", "are"]
 
     keywords = [word.lower() for word in question.split()
                 if word.lower() not in stop_words]
@@ -28,10 +28,17 @@ def retrieve(chunks, question):
     relevant = [chunk for chunk in chunks if any (
         keyword in chunk.lower() for keyword in keywords
         )]
-
+    print(f"Retrieved: {relevant}")
     return relevant if relevant else chunks
 
-def ask_llm(context, question):
+def ask_llm(context, question, history):
+    messages = [
+        {"role": "system", "content": f"You are a smart notes helper. Answer only using this context:\n{context}"}
+    ]
+    messages.extend(history)
+
+    messages.append({"role": "user", "content": question})
+
     response = requests.post(
         "https://api.groq.com/openai/v1/chat/completions",
         headers={
@@ -40,10 +47,7 @@ def ask_llm(context, question):
         },
         json={
             "model": "qwen/qwen3.6-27b",
-            "messages": [
-                {"role": "system", "content": f"You are a smart notes helper. Answer only usinh this context:\n{context}"},
-                {"role": "user", "content": question}
-            ]
+            "messages": messages
         }
     )
 
@@ -54,13 +58,17 @@ def main():
     chunks = chunk_notes(notes)
     print(f"{len(chunks)} chunk created\n")
 
+    history = []
     while True:
         question = input("Ask: ")
         if question.lower() == "quit":
             break
         relevant = retrieve(chunks, question)
         context = "\n".join(relevant)
-        answer = ask_llm(context, question)
+        answer = ask_llm(context, question, history)
+
+        history.append({"role": "user", "content": question})
+        history.append({"role": "assistant", "content": answer})
         print(f"\n {answer} \n")
 
 main()
