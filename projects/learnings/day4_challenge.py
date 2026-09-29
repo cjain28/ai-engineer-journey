@@ -1,8 +1,8 @@
 developer = {
     "name":"Chirag",
     "skills": ["react", "JS", "Python"],
-    "ctc": "23LPA",
-    "target_ctc": "35LPA"
+    "ctc": "85000",
+    "target_ctc": "110000"
 }
 
 for key, value in developer.items():

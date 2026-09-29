@@ -1,4 +1,4 @@
-developer = {"name":"chirag", "ctc":"23"}
+developer = {"name":"chirag", "ctc":"85000"}
 
 # try:
 #     print(developer["salary"])

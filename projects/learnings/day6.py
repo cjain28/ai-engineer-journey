@@ -4,15 +4,15 @@ class Developer:
         self.ctc = ctc
 
     def introduce(self):
-        print(f"Hi I am {self.name} and my ctc is {self.ctc} LPA")
+        print(f"Hi I am {self.name} and my ctc is {self.ctc}")
 
     def get_Hike(self, target_ctc):
         hike = ((target_ctc - self.ctc)/self.ctc) *100
-        return f"{self.name} needs {hike:.1f}% hike to reach {target_ctc} LPA"
+        return f"{self.name} needs {hike:.1f}% hike to reach {target_ctc}"
 
-chirag = Developer("Chirag", 23) #/*creating an object*/
+chirag = Developer("Chirag", 85000) #/*creating an object*/
 chirag.introduce()
-print(chirag.get_Hike(30))
+print(chirag.get_Hike(110000))
 
 class AIEngineer(Developer):
     def __init__(self, name, ctc, specialization):
@@ -20,8 +20,8 @@ class AIEngineer(Developer):
         self.specialization = specialization
 
     def introduce(self):
-        print(f"Hi I am {self.name}, {self.specialization} engineer at {self.ctc} LPA")
+        print(f"Hi I am {self.name}, {self.specialization} engineer at {self.ctc}")
 
-future_chirag = AIEngineer("Chirag", 30, "AI")
+future_chirag = AIEngineer("Chirag", 110000, "AI")
 future_chirag.introduce()
-print(future_chirag.get_Hike(50))
+print(future_chirag.get_Hike(150000))

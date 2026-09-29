@@ -8,8 +8,8 @@ api_key = os.getenv("GROQ_API_KEY")
 document = """
 Chirag Jain is a Frontend Developer with 2 years experience.
 He knows React, JavaScript, and CSS.
-His current CTC is 23 LPA.
-His target is to become an AI Engineer by October 2026.
+His expected CTC is negotiable.
+His target is to become an AI Engineer.
 He is learning Python, LLM APIs, and RAG systems.
 """
 

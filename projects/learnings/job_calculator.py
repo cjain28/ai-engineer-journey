@@ -1,12 +1,12 @@
-current_ctc = 23
-expected_ctc = 35
+current_ctc = 85000
+expected_ctc = 110000
 
 hike = expected_ctc - current_ctc
 hike_percentage = hike/current_ctc * 100
 
-print(f"{current_ctc}lpa")
-print(f"{expected_ctc}lpa")
-print(f"{hike}lpa")
+print(f"{current_ctc}")
+print(f"{expected_ctc}")
+print(f"{hike}")
 print(f"{hike_percentage:.2f}%")
 
 if hike_percentage >= 50:

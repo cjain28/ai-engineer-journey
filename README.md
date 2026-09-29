@@ -6,7 +6,6 @@ A documented journey from Frontend Developer to AI Engineer.
 - **Name:** Chirag Jain
 - **Current Role:** Frontend Developer (React)
 - **Target Role:** AI Engineer
-- **Timeline:** October 2026
 
 ## 🛠️ Projects
 

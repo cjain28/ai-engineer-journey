@@ -1,11 +1,10 @@
 developer ={
     "name": "Chirag",
-    "current_ctc": 23,
+    "current_ctc": 85000,
     "skills": ["React", "JS", "Python"],
     "target": {
         "role": "AI Engineer",
-        "ctc": 30,
-        "deadline": "October 2026"
+        "ctc": 110000
     }
 }
 

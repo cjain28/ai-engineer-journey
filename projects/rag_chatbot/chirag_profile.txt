@@ -1,6 +1,6 @@
 Chirag Jain is a Frontend Developer with 2 years experience.
 He knows React, JavaScript, CSS and Python.
-His target is to become an AI Engineer by October 2026.
+His target is to become an AI Engineer.
 He is learning LLM APIs and RAG systems.
 Expected CTC: Negotiable
 He lives in Delhi.
