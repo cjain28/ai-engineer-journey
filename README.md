@@ -25,7 +25,3 @@ A document Q&A system that answers questions from a text file.
 ## 📚 Learning Path
 - Week 1: Python Fundamentals
 - Week 2: LLM APIs + RAG Systems
-- Week 3: Coming soon...
-
-## 🎯 Goal
-Land an AI Engineering role by October 2026.

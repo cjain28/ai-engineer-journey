@@ -15,7 +15,7 @@ llm = ChatGroq(
 def calculate_hike(current_ctc: float, target_ctc: float) -> str:
     """Calculate the hike percentage needed to reach the target CTC"""
     hike = ((target_ctc - current_ctc) / current_ctc) * 100
-    return f"You need a {hike:.1f}% hike to go from {current_ctc} LPA to {target_ctc}"
+    return f"You need a {hike:.1f}% hike to go from {current_ctc} to {target_ctc}"
 
 @tool
 def get_skills_gap(current_role: str, target_role: str) -> str:
@@ -31,10 +31,13 @@ agent = create_agent(
     debug=True
 )
 
+current_ctc = 85000  # sample data
+target_ctc = 110000  # sample data
+
 result = agent.invoke({
     "messages":[{
         "role": "user",
-        "content": "I am a frontend developer with 23 LPA CTC. I want to be an AI Engineer with 30 LPA. What hike do I need and what skills should I learn?"
+        "content": f"I am a frontend developer with {current_ctc} CTC. I want to be an AI Engineer with {target_ctc}. What hike do I need and what skills should I learn?"
     }]
 })
 

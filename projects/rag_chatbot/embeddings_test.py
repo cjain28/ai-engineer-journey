@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 sentences = [
-    "My salary is 23 LPA",
+    "My salary is 85000",
     "I work at Cotiviti",
     "I am learning Python"
 ]
